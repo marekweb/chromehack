@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="jquery.js"></script>
+		<script src="getusermedia.js"></script>
+
+	</head>
+	<style>
+		#video { display: none; }
+		.main {
+			width: 640px;
+			margin: 20px auto;
+		}
+		#prompt {
+			text-align: center;
+			font-size: 30px;
+			font-family: Arial, sans-serif;
+			margin: 20px 0;
+		}
+	</style>
+
+	<body>
+		<div id="prompt">
+			Click "Allow" above to give access to your webcam.
+		</div>
+		<div class="top"></div>
+		<div class="main">
+			<video id="video" width="640" height="480"></video>
+			<canvas id="canvas" width="640" height="480"></canvas>
+		</div>
+	</body>
+
+</html>
