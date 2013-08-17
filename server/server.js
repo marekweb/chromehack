@@ -4,14 +4,11 @@ var app = express();
 var resources = {};
 
 resources['8FABC4'] = "http://crasstalk.com/wp-content/uploads/2012/03/funny-gifs-this-cat-is-hyped.gif";
-resources['8FABC4'] = "http://crasstalk.com/wp-content/uploads/2012/03/funny-gifs-this-cat-is-hyped.gif";
-resources['8FABC4'] = "http://crasstalk.com/wp-content/uploads/2012/03/funny-gifs-this-cat-is-hyped.gif";
-
 
 app.get('/get', function(req, res){
   var resource = resources[req.query.id];
 
-  if (!resource) return res.send("Not Found");
+  if (!resource) return res.status(404);
 
   res.send(resource);
 
@@ -20,7 +17,7 @@ app.get('/get', function(req, res){
 app.get('/set', function(req, res) {
 	if (req.query.id == null && req.query.value == null) {
 		
-		return res.send(req.query);
+		return res.status(400);
 	}
 	resources[req.query.id] = req.query.value;
 	res.send(req.query.value)

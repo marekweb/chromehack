@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Bardecoder",
+  "name": "Barcoder",
   "version": "1",
   "app": {
     "background": {
@@ -10,11 +10,12 @@
 
 
   "icons": {
+    "16": "icon_16.png",
     "128": "icon_128.png"
   },
 
 
   "permissions": [
-    "videoCapture",  "serial"
+    "videoCapture",  "serial", "contextMenus"
   ]
 }
