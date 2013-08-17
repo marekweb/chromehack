@@ -1,5 +1,5 @@
 
-var UPDATE_DELAY = 500;
+var UPDATE_DELAY = 400;
 var HEIGHT = 480;
 var WIDTH = 640;
 
@@ -29,6 +29,13 @@ function getUserMediaSuccess(localMediaStream) {
 	videoElem.src = window.URL.createObjectURL(localMediaStream);
 
 	video.play();
+
+	chrome.serial.getPorts(function(ports) {
+		console.log(ports);
+			$('.top').html(ports.join());
+
+	});
+
 
 	setInterval(update, UPDATE_DELAY);
 
